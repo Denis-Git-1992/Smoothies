@@ -4,7 +4,7 @@ from snowflake.snowpark.functions import col
 import requests
 
 # Write directly to the app
-st.title(f":cup_with_straw: Customize Your Smoothie :balloon:")
+st.title(f":cup_with_straw: Customize Your Smoothie :cup_with_straw:")
 st.write(
   """Choose the fruits you want in your custom Smoothie!
   """
@@ -31,7 +31,7 @@ if ingdredients_list:
 
     for ingredient in ingdredients_list:
         ingredients_string += ingredient + ' '
-        st.subheader(ingredient + 'Nutrition Information'
+        st.subheader(ingredient + 'Nutrition Information')
         smoothiefroot_response = requests.get("https://my.smoothiefroot.com/api/fruit/" + ingredient)
         sf_df = st.dataframe(data = smoothiefroot_response.json(), use_container_width = True) 
 
